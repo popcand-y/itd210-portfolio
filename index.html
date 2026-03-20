@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tobidoki</title>
+
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/script.js"></script>
+</head>
+
+<body>
+
+<header>
+<h1>Tobidoki</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="gallery.html">Gallery</a>
+<a href="media.html">Media</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<img src="gallery/strawberry.png" class="floating" alt="Cute strawberry">
+<h2>A tiny cozy world waiting to be explored</h2>
+<p>Choose a character and begin your gentle adventure.</p>
+</section>
+
+<!-- PET SECTION -->
+<section class="pet-section">
+
+<div class="pet-panel">
+
+<button class="arrow" onclick="prevCharacter()">◀</button>
+
+<div class="pet-display">
+<img id="characterImage" src="gallery/cat.png" alt="character">
+<p id="characterName">Star Kitty</p>
+</div>
+
+<button class="arrow" onclick="nextCharacter()">▶</button>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<span>Mood</span>
+<div class="bar"><div id="moodBar"></div></div>
+</div>
+
+<div class="stat">
+<span>Energy</span>
+<div class="bar"><div id="energyBar"></div></div>
+</div>
+
+<div class="stat">
+<span>Cuteness</span>
+<div class="bar"><div id="cuteBar"></div></div>
+</div>
+
+</div>
+
+</section>
+
+<hr class="divider">
+
+<!-- 🌸 ROOM SLIDER -->
+<section class="room-slider">
+
+<h2 class="slider-title">Explore Rooms ✧</h2>
+
+<div class="slider-container">
+
+<button class="slider-btn left" onclick="slideLeft()">◀</button>
+
+<div class="slider-track" id="sliderTrack">
+
+<div class="room-card">
+<img src="gallery/matcha.png" alt="Matcha Cafe">
+<p>Matcha Café</p>
+</div>
+
+<div class="room-card">
+<img src="gallery/library.png" alt="Library">
+<p>Library for Strawberry</p>
+</div>
+
+<div class="room-card">
+<img src="gallery/sleepover.png" alt="Sleepover">
+<p>Sleepover Room</p>
+</div>
+
+</div>
+
+<button class="slider-btn right" onclick="slideRight()">▶</button>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Allison Consuegra • ITD 210
+</footer>
+
+</body>
+</html>

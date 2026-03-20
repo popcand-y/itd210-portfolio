@@ -1,0 +1,492 @@
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+/* ========================= */
+/* 🌸 HOME PAGE BODY */
+/* ========================= */
+body:not(.about-page){
+background:#d3b1b3; /* lighter dusty pink (matches your screenshot better) */
+color:#4b3f3f;
+text-align:center;
+position:relative;
+min-height:100vh;
+}
+
+/* POLKA DOT OVERLAY (SOFTER) */
+body:not(.about-page)::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:radial-gradient(#f8eded 2px, transparent 2px);
+background-size:28px 28px;
+opacity:0.6; /* softer so it doesn’t darken */
+pointer-events:none;
+z-index:0;
+}
+
+/* keep content above dots */
+body:not(.about-page) > *{
+position:relative;
+z-index:1;
+}
+
+/* ========================= */
+/* 🎀 ABOUT PAGE BODY (FIXED) */
+/* ========================= */
+body.about-page{
+background:#d8b3b7;
+color:#4b3f3f;
+text-align:center;
+}
+
+/* ========================= */
+/* 💚 HEADER */
+/* ========================= */
+header{
+background:#9fbc6e;
+color:white;
+padding:25px 10px 40px;
+position:relative;
+}
+
+header h1{
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* SCALLOP */
+header::after{
+content:"";
+position:absolute;
+bottom:-15px;
+left:0;
+width:100%;
+height:30px;
+background:radial-gradient(circle at 15px 0px,#9fbc6e 15px,transparent 16px) repeat-x;
+background-size:30px 30px;
+}
+
+/* ========================= */
+/* 🍓 HERO */
+/* ========================= */
+.hero{
+padding:80px 20px;
+}
+
+/* FLOATING STRAWBERRY */
+.floating{
+width:80px;
+margin-bottom:20px;
+animation:floaty 3s ease-in-out infinite;
+filter:drop-shadow(0 6px 10px rgba(0,0,0,0.2));
+}
+
+@keyframes floaty{
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
+}
+
+/* ========================= */
+/* 💖 CENTER PET BOX */
+/* ========================= */
+.pet-display{
+background:#f6d3d8;
+padding:15px;
+border-radius:25px;
+box-shadow:
+0 0 0 3px #ffffff,
+0 8px 20px rgba(0,0,0,0.12);
+display:inline-block;
+position:relative;
+}
+
+.pet-display::before{
+content:"";
+position:absolute;
+inset:8px;
+border-radius:20px;
+border:2px dashed #ffffff;
+pointer-events:none;
+}
+
+.pet-display img{
+width:100px;
+display:block;
+margin:0 auto;
+}
+
+/* ========================= */
+/* 🐾 PET PANEL */
+/* ========================= */
+.pet-panel{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+margin-top:30px;
+}
+
+.arrow{
+background:#9fbc6e;
+border:none;
+padding:10px;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* ========================= */
+/* 📊 STATS */
+/* ========================= */
+.stats{
+margin-top:20px;
+}
+
+.bar{
+background:#eee;
+height:8px;
+width:250px;
+margin:5px auto 15px;
+border-radius:10px;
+}
+
+.bar div{
+height:8px;
+background:#9fbc6e;
+border-radius:10px;
+width:60%;
+}
+
+/* ========================= */
+/* DIVIDER */
+/* ========================= */
+.divider{
+margin:40px auto;
+width:60%;
+border:1px solid #c97f8f;
+}
+
+/* ========================= */
+/* 🌸 ROOM SLIDER */
+/* ========================= */
+.room-slider{
+padding:50px 20px;
+}
+
+.slider-title{
+margin-bottom:20px;
+font-size:1.5rem;
+}
+
+.slider-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+}
+
+.slider-track{
+display:flex;
+gap:20px;
+overflow:hidden;
+width:260px;
+scroll-behavior:smooth;
+}
+
+.room-card{
+min-width:250px;
+background:#e7c7cd;
+padding:15px;
+border-radius:20px;
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.room-card img{
+width:100%;
+border-radius:15px;
+}
+
+.room-card p{
+margin-top:10px;
+font-weight:bold;
+}
+
+.room-card:hover{
+transform:translateY(-5px);
+}
+
+.slider-btn{
+background:#9fbc6e;
+border:none;
+padding:10px 14px;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+}
+
+/* FOOTER */
+footer{
+padding:20px;
+font-size:0.8rem;
+}
+
+/* ========================= */
+/* 🎀 ABOUT PAGE (UNCHANGED) */
+/* ========================= */
+
+.about-page .about-banner{
+background:#c97f8f;
+padding:50px 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.about-page .about-icon img{
+width:100px;
+background:white;
+padding:10px;
+border-radius:50%;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.about-page .about-text{
+text-align:left;
+max-width:400px;
+color:white;
+}
+
+.about-page .about-text h2{
+font-size:1.8rem;
+margin-bottom:5px;
+}
+
+.about-page .about-text p{
+font-size:0.95rem;
+opacity:0.9;
+}
+
+.about-page .about-content{
+padding:50px 20px;
+}
+
+.about-page .about-box{
+background:#e7c7cd;
+padding:30px;
+border-radius:20px;
+max-width:650px;
+margin:25px auto;
+box-shadow:0 8px 18px rgba(0,0,0,0.15);
+text-align:left;
+}
+
+.about-page .about-box h2{
+text-align:center;
+margin-bottom:10px;
+font-size:1.5rem;
+}
+
+.about-page .cute-divider{
+border:none;
+height:2px;
+background:#c97f8f;
+width:60%;
+margin:10px auto 20px;
+}
+
+.about-page .about-box p{
+margin-bottom:12px;
+line-height:1.6;
+}
+
+/* ========================= */
+/* 🌸 SIMPLE GALLERY (ADDED SAFE) */
+/* ========================= */
+
+.gallery-section{
+padding:60px 20px;
+}
+
+.gallery-title{
+font-size:1.8rem;
+margin-bottom:25px;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+gap:20px;
+max-width:900px;
+margin:0 auto;
+}
+
+.gallery-item{
+background:#f6d3d8;
+padding:10px;
+border-radius:20px;
+box-shadow:
+0 0 0 3px #ffffff,
+0 6px 15px rgba(0,0,0,0.12);
+transition:0.3s;
+}
+
+.gallery-item img{
+width:100%;
+border-radius:15px;
+display:block;
+}
+
+.gallery-item:hover{
+transform:translateY(-5px) rotate(-1deg);
+}
+
+.gallery-item p{
+margin-top:8px;
+font-size:0.85rem;
+}
+/* ========================= */
+/* 🌸 GALLERY PAGE (SAFE ADD) */
+/* ========================= */
+
+body.gallery-page{
+background:#d3b1b3;
+color:#4b3f3f;
+text-align:center;
+position:relative;
+min-height:100vh;
+}
+
+/* polka dots (same as home) */
+body.gallery-page::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:radial-gradient(#f8eded 2px, transparent 2px);
+background-size:28px 28px;
+opacity:0.6;
+pointer-events:none;
+z-index:0;
+}
+
+body.gallery-page > *{
+position:relative;
+z-index:1;
+}
+
+/* title */
+.gallery-title{
+font-size:1.8rem;
+margin-bottom:25px;
+}
+
+/* grid layout */
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+gap:20px;
+max-width:800px;
+margin:0 auto;
+}
+
+/* card */
+.gallery-item{
+background:#f6d3d8;
+padding:10px;
+border-radius:20px;
+box-shadow:0 6px 15px rgba(0,0,0,0.12);
+transition:0.3s;
+}
+
+.gallery-item img{
+width:100%;
+border-radius:15px;
+display:block;
+}
+
+.gallery-item p{
+margin-top:8px;
+font-size:0.9rem;
+}
+
+/* hover effect */
+.gallery-item:hover{
+transform:translateY(-5px) scale(1.02);
+}
+/* ========================= */
+/* 🎀 GALLERY UPGRADE (RIM + VLOG STYLE) */
+/* ========================= */
+
+/* outer vlog container feel */
+.gallery-section{
+background:#e7c7cd;
+border-radius:30px;
+max-width:950px;
+margin:40px auto;
+padding:30px 20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* card upgrade */
+.gallery-item{
+background:#f6d3d8;
+padding:12px;
+border-radius:25px;
+position:relative;
+box-shadow:
+0 0 0 3px #ffffff,
+0 8px 18px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+/* ✨ INNER DASHED RIM (LIKE YOUR PET BOX) */
+.gallery-item::before{
+content:"";
+position:absolute;
+inset:8px;
+border-radius:18px;
+border:2px dashed #ffffff;
+pointer-events:none;
+}
+
+/* image styling */
+.gallery-item img{
+width:100%;
+border-radius:15px;
+display:block;
+}
+
+/* cute caption */
+.gallery-item p{
+margin-top:10px;
+font-size:0.85rem;
+background:#ffffffaa;
+display:inline-block;
+padding:4px 10px;
+border-radius:10px;
+}
+
+/* hover = vlog vibe */
+.gallery-item:hover{
+transform:translateY(-6px) rotate(-1deg) scale(1.03);
+}
