@@ -388,8 +388,13 @@ display:block;
 }
 
 /* ========================= */
-/* 🌸 GALLERY (ONLY CHANGE) */
+/* 🌸 GALLERY (FIXED SIZE) */
 /* ========================= */
+
+.gallery-item{
+max-width:180px;
+margin:0 auto;
+}
 
 .gallery-item img{
 width:100%;
