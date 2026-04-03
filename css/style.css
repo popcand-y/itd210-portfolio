@@ -386,3 +386,50 @@ font-size:22px;
 border-radius:15px;
 display:block;
 }
+
+/* ========================= */
+/* 🌸 GALLERY FIX (ONLY CHANGE) */
+/* ========================= */
+
+.gallery-item{
+background:#f6d3d8;
+padding:12px;
+border-radius:25px;
+position:relative;
+box-shadow:
+0 0 0 3px #ffffff,
+0 8px 18px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.gallery-item::before{
+content:"";
+position:absolute;
+inset:8px;
+border-radius:18px;
+border:2px dashed #ffffff;
+pointer-events:none;
+}
+
+.gallery-item::after{
+content:"🍓";
+position:absolute;
+top:-8px;
+right:-8px;
+font-size:18px;
+}
+
+.gallery-item img{
+width:100%;
+border-radius:15px;
+display:block;
+}
+
+.gallery-item p{
+margin-top:10px;
+font-size:0.85rem;
+}
+
+.gallery-item:hover{
+transform:translateY(-6px) rotate(-1deg) scale(1.03);
+}
