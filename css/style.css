@@ -233,7 +233,7 @@ font-size:0.8rem;
 }
 
 /* ========================= */
-/* 🎀 ABOUT PAGE (RESTORED) */
+/* 🎀 ABOUT PAGE */
 /* ========================= */
 
 .about-page .about-banner{
@@ -304,53 +304,6 @@ line-height:1.6;
 }
 
 /* ========================= */
-/* ✨ DYNAMIC SECTION */
-/* ========================= */
-
-#dynamic{
-text-align:center;
-margin:80px 0;
-}
-
-#dynamic h2{
-margin-bottom:10px;
-}
-
-#dynamic button{
-padding:10px 16px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-background:#9fbc6e;
-color:white;
-}
-
-#dataContainer{
-margin-top:20px;
-}
-
-.card{
-background:#f6d3d8;
-padding:12px;
-margin:10px auto;
-max-width:300px;
-border-radius:20px;
-box-shadow:
-0 0 0 3px #ffffff,
-0 6px 15px rgba(0,0,0,0.12);
-position:relative;
-}
-
-.card::before{
-content:"";
-position:absolute;
-inset:8px;
-border-radius:15px;
-border:2px dashed #ffffff;
-pointer-events:none;
-}
-
-/* ========================= */
 /* 🍓 VIDEO FRAME */
 /* ========================= */
 
@@ -388,18 +341,58 @@ display:block;
 }
 
 /* ========================= */
-/* 🌸 GALLERY (FIXED SIZE) */
+/* 🌸 GALLERY (FINAL FIX) */
 /* ========================= */
 
-.gallery-item{
-max-width:180px;
+.gallery-section{
+padding:60px 20px;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+gap:25px;
+max-width:800px;
 margin:0 auto;
+}
+
+.gallery-item{
+background:#f6d3d8;
+padding:12px;
+border-radius:25px;
+position:relative;
+box-shadow:
+0 0 0 3px #ffffff,
+0 8px 18px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.gallery-item::before{
+content:"";
+position:absolute;
+inset:8px;
+border-radius:18px;
+border:2px dashed #ffffff;
+pointer-events:none;
 }
 
 .gallery-item img{
 width:100%;
-max-width:100px;
+max-width:140px;
 margin:0 auto;
-border-radius:15px;
 display:block;
+border-radius:15px;
+}
+
+.gallery-item p{
+margin-top:10px;
+font-size:0.85rem;
+background:#ffffffaa;
+display:inline-block;
+padding:4px 10px;
+border-radius:10px;
+}
+
+.gallery-item:hover{
+transform:translateY(-6px) rotate(-1deg) scale(1.03);
 }
