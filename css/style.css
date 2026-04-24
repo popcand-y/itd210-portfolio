@@ -341,7 +341,19 @@ display:block;
 }
 
 /* ========================= */
-/* 🌸 GALLERY (SAFE + ISOLATED) */
+/* 🎬 HTML5 VIDEO (NEW) */
+/* ========================= */
+video{
+border-radius:20px;
+box-shadow:
+0 0 0 3px #ffffff,
+0 8px 20px rgba(0,0,0,0.12);
+margin-top:10px;
+max-width:100%;
+}
+
+/* ========================= */
+/* 🌸 GALLERY */
 /* ========================= */
 
 .gallery-page .gallery-section{
