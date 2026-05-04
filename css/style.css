@@ -134,16 +134,187 @@ display:block;
 margin:0 auto;
 }
 
-/* ROOM CARD HOVER (extra interaction) */
+/* PET PANEL */
+.pet-panel{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+margin-top:30px;
+}
+
+.arrow{
+background:#9fbc6e;
+border:none;
+padding:10px;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* STATS */
+.stats{
+margin-top:20px;
+}
+
+.bar{
+background:#eee;
+height:8px;
+width:250px;
+margin:5px auto 15px;
+border-radius:10px;
+}
+
+.bar div{
+height:8px;
+background:#9fbc6e;
+border-radius:10px;
+width:60%;
+}
+
+/* DIVIDER */
+.divider{
+margin:40px auto;
+width:60%;
+border:1px solid #c97f8f;
+}
+
+/* ROOM SLIDER */
+.room-slider{
+padding:50px 20px;
+}
+
+.slider-title{
+margin-bottom:20px;
+font-size:1.5rem;
+}
+
+.slider-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+}
+
+.slider-track{
+display:flex;
+gap:20px;
+overflow:hidden;
+width:260px;
+scroll-behavior:smooth;
+}
+
+.room-card{
+min-width:250px;
+background:#e7c7cd;
+padding:15px;
+border-radius:20px;
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.room-card img{
+width:100%;
+border-radius:15px;
+}
+
+.room-card p{
+margin-top:10px;
+font-weight:bold;
+}
+
 .room-card:hover{
 transform:translateY(-5px);
 }
 
+.slider-btn{
+background:#9fbc6e;
+border:none;
+padding:10px 14px;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+}
+
+/* FOOTER */
+footer{
+padding:20px;
+font-size:0.8rem;
+}
+
 /* ========================= */
-/* 💌 CONTACT PAGE STYLES */
+/* 🎀 ABOUT PAGE */
+/* ========================= */
+.about-page .about-banner{
+background:#c97f8f;
+padding:50px 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.about-page .about-icon img{
+width:100px;
+background:white;
+padding:10px;
+border-radius:50%;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.about-page .about-text{
+text-align:left;
+max-width:400px;
+color:white;
+}
+
+.about-page .about-text h2{
+font-size:1.8rem;
+margin-bottom:5px;
+}
+
+.about-page .about-text p{
+font-size:0.95rem;
+opacity:0.9;
+}
+
+.about-page .about-content{
+padding:50px 20px;
+}
+
+.about-page .about-box{
+background:#e7c7cd;
+padding:30px;
+border-radius:20px;
+max-width:650px;
+margin:25px auto;
+box-shadow:0 8px 18px rgba(0,0,0,0.15);
+text-align:left;
+}
+
+.about-page .about-box h2{
+text-align:center;
+margin-bottom:10px;
+font-size:1.5rem;
+}
+
+.about-page .cute-divider{
+border:none;
+height:2px;
+background:#c97f8f;
+width:60%;
+margin:10px auto 20px;
+}
+
+.about-page .about-box p{
+margin-bottom:12px;
+line-height:1.6;
+}
+
+/* ========================= */
+/* 💌 CONTACT PAGE */
 /* ========================= */
 
-/* Card style matching your site */
 body.contact-page main{
 background:#f6d3d8;
 padding:20px;
@@ -156,7 +327,6 @@ margin-top:30px;
 position:relative;
 }
 
-/* Inner dashed border */
 body.contact-page main::before{
 content:"";
 position:absolute;
@@ -166,7 +336,6 @@ border:2px dashed #ffffff;
 pointer-events:none;
 }
 
-/* Inputs */
 body.contact-page input,
 body.contact-page textarea{
 width:100%;
@@ -177,14 +346,6 @@ border:none;
 background:#fff;
 }
 
-/* Focus effect */
-body.contact-page input:focus,
-body.contact-page textarea:focus{
-outline:none;
-box-shadow:0 0 8px #ffb6c1;
-}
-
-/* Button */
 body.contact-page button{
 background:#9fbc6e;
 color:white;
@@ -192,60 +353,4 @@ border:none;
 padding:10px 15px;
 border-radius:15px;
 cursor:pointer;
-transition:0.3s;
-}
-
-/* Button hover */
-body.contact-page button:hover{
-transform:translateY(-4px);
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* Error messages */
-body.contact-page .error{
-color:#c94b4b;
-font-size:0.85rem;
-}
-
-/* Success message */
-body.contact-page #successMessage{
-color:#4CAF50;
-margin-top:10px;
-}
-
-/* Social links */
-body.contact-page .socials a{
-display:inline-block;
-margin:5px;
-padding:8px 12px;
-border-radius:15px;
-background:#e7c7cd;
-text-decoration:none;
-color:#4b3f3f;
-transition:0.2s;
-}
-
-body.contact-page .socials a:hover{
-background:#9fbc6e;
-color:white;
-}
-
-/* FAQ */
-body.contact-page .faq button{
-width:100%;
-text-align:left;
-background:#e7c7cd;
-color:#4b3f3f;
-}
-
-body.contact-page .faq button:hover{
-background:#d8b3b7;
-}
-
-/* ========================= */
-/* FOOTER */
-/* ========================= */
-footer{
-padding:20px;
-font-size:0.8rem;
 }
