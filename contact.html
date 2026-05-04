@@ -10,11 +10,9 @@
 
 <body class="contact-page">
 
-<!-- Header -->
 <header>
   <h1 class="logo">Tobidoki</h1>
 
-  <!-- Navigation connects all pages -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -23,84 +21,83 @@
   </nav>
 </header>
 
-<main>
+<main class="contact-container">
 
-<!-- Page intro -->
-<h2>Contact Me 💌</h2>
-<p>
-Got a question, idea, or just want to say hi?  
-Send me a message! I’d love to hear from you ✨
-</p>
-
-<p style="font-size:0.85rem;">
-Please allow 1–2 days for a response.
-</p>
-
-<!-- Contact form -->
-<form id="contactForm" novalidate>
-
-  <!-- Name -->
-  <label for="name">Name</label>
-  <input type="text" id="name" required aria-describedby="nameError">
-  <div class="error" id="nameError"></div>
-
-  <!-- Email -->
-  <label for="email">Email</label>
-  <input type="email" id="email" required aria-describedby="emailError">
-  <div class="error" id="emailError"></div>
-
-  <!-- Subject -->
-  <label for="subject">Subject</label>
-  <input type="text" id="subject" required aria-describedby="subjectError">
-  <div class="error" id="subjectError"></div>
-
-  <!-- Message -->
-  <label for="message">Message</label>
-  <textarea id="message" required aria-describedby="messageError"></textarea>
-  <div class="error" id="messageError"></div>
-
-  <!-- Character counter (interactive feature) -->
-  <p id="counter">0 characters</p>
-
-  <button type="submit">Send</button>
-
-</form>
-
-<!-- Success message -->
-<p id="successMessage" aria-live="polite"></p>
-
-<!-- Social links (placeholder/demo) -->
-<div class="socials">
-  <h3>Find me online ✨</h3>
-
-  <a href="https://instagram.com" target="_blank">Instagram</a>
-  <a href="https://twitter.com" target="_blank">Twitter</a>
-  <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-</div>
-
-<p style="font-size:0.8rem;">
-*Social links are placeholders for demonstration purposes.
-</p>
-
-<!-- FAQ interaction -->
-<div class="faq">
-  <h3>FAQ 💭</h3>
-
-  <button onclick="toggleFAQ()">When will I get a reply?</button>
-  <p id="faqAnswer" style="display:none;">
-    I usually respond within 1–2 days!
+  <!-- Intro -->
+  <h2>Contact Me 💌</h2>
+  <p>
+    Got a question, idea, or just want to say hi?  
+    Send me a message! I’d love to hear from you ✨
   </p>
-</div>
+
+  <p style="font-size:0.85rem;">
+    Please allow 1–2 days for a response.
+  </p>
+
+  <!-- FORM CARD -->
+  <form id="contactForm" novalidate>
+
+    <!-- Name -->
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
+    <div class="error" id="nameError"></div>
+
+    <!-- Email -->
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+    <div class="error" id="emailError"></div>
+
+    <!-- Subject -->
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" required>
+    <div class="error" id="subjectError"></div>
+
+    <!-- Message -->
+    <label for="message">Message</label>
+    <textarea id="message" required></textarea>
+    <div class="error" id="messageError"></div>
+
+    <!-- Character counter -->
+    <p id="counter">0 characters</p>
+
+    <button type="submit">Send</button>
+
+  </form>
+
+  <!-- Success message -->
+  <p id="successMessage"></p>
+
+  <!-- Socials -->
+  <div class="socials">
+    <h3>Find me online ✨</h3>
+
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+    <a href="https://twitter.com" target="_blank">Twitter</a>
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+  </div>
+
+  <p style="font-size:0.8rem;">
+    *Social links are placeholders for demonstration purposes.
+  </p>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h3>FAQ 💭</h3>
+
+    <button onclick="toggleFAQ()">When will I get a reply?</button>
+    <p id="faqAnswer" style="display:none;">
+      I usually respond within 1–2 days!
+    </p>
+  </div>
 
 </main>
 
-<!-- Footer -->
 <footer>
   <p>© 2026 Allison Consuegra • ITD 210</p>
 </footer>
 
 <script>
-// Character counter (adds interactivity)
+// Character counter
 const messageField = document.getElementById("message");
 const counter = document.getElementById("counter");
 
@@ -108,20 +105,18 @@ messageField.addEventListener("input", () => {
   counter.textContent = messageField.value.length + " characters";
 });
 
-// FAQ toggle interaction
+// FAQ toggle
 function toggleFAQ() {
   const answer = document.getElementById("faqAnswer");
   answer.style.display =
     answer.style.display === "none" ? "block" : "none";
 }
 
-// Form validation
+// Validation
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
   let valid = true;
-
-  // Clear previous errors
   document.querySelectorAll(".error").forEach(el => el.textContent = "");
 
   const name = document.getElementById("name").value.trim();
@@ -129,32 +124,27 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   const subject = document.getElementById("subject").value.trim();
   const message = messageField.value.trim();
 
-  // Name validation
   if (!name) {
     document.getElementById("nameError").textContent = "Name is required";
     valid = false;
   }
 
-  // Email validation
   if (!email.includes("@")) {
     document.getElementById("emailError").textContent = "Enter a valid email";
     valid = false;
   }
 
-  // Subject validation
   if (!subject) {
     document.getElementById("subjectError").textContent = "Subject is required";
     valid = false;
   }
 
-  // Message validation
   if (message.length < 10) {
     document.getElementById("messageError").textContent =
       "Message must be at least 10 characters";
     valid = false;
   }
 
-  // Success state
   if (valid) {
     document.getElementById("successMessage").textContent =
       "Thanks! Your message was sent ✨";
