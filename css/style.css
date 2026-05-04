@@ -303,7 +303,35 @@ line-height:1.6;
 }
 
 /* ========================= */
-/* 🎀 UPDATED CUTE ITEM FRAMES */
+/* 🌸 GALLERY FIX */
+/* ========================= */
+
+.gallery-page .gallery-section{
+padding:60px 20px;
+}
+
+.gallery-page .gallery-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+max-width:900px;
+margin:0 auto;
+}
+
+@media (min-width:640px){
+.gallery-page .gallery-grid{
+grid-template-columns:repeat(2, 1fr);
+}
+}
+
+@media (min-width:1024px){
+.gallery-page .gallery-grid{
+grid-template-columns:repeat(3, 1fr);
+}
+}
+
+/* ========================= */
+/* 🎀 UPDATED FRAMES */
 /* ========================= */
 
 .gallery-page .gallery-item,
@@ -341,15 +369,14 @@ transform:rotate(-10deg);
 .gallery-page .gallery-item:hover,
 .media-frame:hover{
 transform:translateY(-6px) scale(1.04);
-box-shadow:
-0 0 0 3px #ffffff,
-0 15px 35px rgba(0,0,0,0.2);
 }
 
 .gallery-page .gallery-item img,
 .media-frame video,
 .media-frame iframe{
 width:100%;
+height:200px;
+object-fit:cover;
 border-radius:18px;
 display:block;
 }
