@@ -82,6 +82,7 @@ background-size:30px 30px;
 /* ========================= */
 /* 🌸 GALLERY */
 /* ========================= */
+
 .gallery-page .gallery-section{
 padding:60px 20px;
 }
@@ -107,8 +108,9 @@ grid-template-columns:repeat(3,1fr);
 }
 
 /* ========================= */
-/* 🎀 FRAMES */
+/* 🎀 FRAMES (PERFECT SIZE VERSION) */
 /* ========================= */
+
 .gallery-page .gallery-item,
 .media-frame{
 background:#f6d3d8;
@@ -118,9 +120,9 @@ position:relative;
 box-shadow:
 0 0 0 3px #ffffff,
 0 8px 20px rgba(0,0,0,0.12);
-transition:0.3s;
 }
 
+/* dashed border */
 .gallery-page .gallery-item::before,
 .media-frame::before{
 content:"";
@@ -131,6 +133,7 @@ border:2px dashed #ffffff;
 pointer-events:none;
 }
 
+/* 🍓 detail */
 .gallery-page .gallery-item::after,
 .media-frame::after{
 content:"🍓";
@@ -140,6 +143,7 @@ right:-8px;
 font-size:18px;
 }
 
+/* KEEP ORIGINAL IMAGE SIZE */
 .gallery-page .gallery-item img,
 .media-frame video,
 .media-frame iframe{
@@ -148,14 +152,16 @@ border-radius:15px;
 display:block;
 }
 
+/* SMALL hover (not too big) */
 .gallery-page .gallery-item:hover,
 .media-frame:hover{
-transform:translateY(-5px);
+transform:translateY(-4px);
 }
 
 /* ========================= */
 /* FOOTER */
 /* ========================= */
+
 footer{
 padding:20px;
 font-size:0.8rem;
