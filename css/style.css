@@ -9,7 +9,7 @@ font-family:Arial, sans-serif;
 /* ========================= */
 /* 🌸 HOME PAGE BODY */
 /* ========================= */
-body:not(.about-page):not(.contact-page){
+body:not(.about-page){
 background:#d3b1b3;
 color:#4b3f3f;
 text-align:center;
@@ -17,8 +17,8 @@ position:relative;
 min-height:100vh;
 }
 
-/* POLKA DOT OVERLAY (NOT ON CONTACT) */
-body:not(.about-page):not(.contact-page)::before{
+/* POLKA DOT OVERLAY */
+body:not(.about-page)::before{
 content:"";
 position:fixed;
 top:0;
@@ -32,7 +32,7 @@ pointer-events:none;
 z-index:0;
 }
 
-body:not(.about-page):not(.contact-page) > *{
+body:not(.about-page) > *{
 position:relative;
 z-index:1;
 }
@@ -41,15 +41,6 @@ z-index:1;
 /* 🎀 ABOUT PAGE BODY */
 /* ========================= */
 body.about-page{
-background:#d8b3b7;
-color:#4b3f3f;
-text-align:center;
-}
-
-/* ========================= */
-/* 💌 CONTACT PAGE BODY */
-/* ========================= */
-body.contact-page{
 background:#d8b3b7;
 color:#4b3f3f;
 text-align:center;
@@ -89,118 +80,8 @@ background-size:30px 30px;
 }
 
 /* ========================= */
-/* 💌 CONTACT STRUCTURE */
-/* ========================= */
-
-.contact-page main{
-max-width:700px;
-margin:0 auto;
-padding:50px 20px;
-}
-
-.contact-box{
-background:#f6d3d8;
-padding:20px;
-border-radius:20px;
-margin:20px auto;
-position:relative;
-box-shadow:
-0 0 0 3px #ffffff,
-0 8px 18px rgba(0,0,0,0.12);
-max-width:600px;
-}
-
-/* dashed border */
-.contact-box::before{
-content:"";
-position:absolute;
-inset:10px;
-border-radius:15px;
-border:2px dashed #ffffff;
-pointer-events:none;
-}
-
-/* form card */
-.contact-card{
-background:white;
-padding:15px;
-border-radius:15px;
-margin-top:10px;
-}
-
-.contact-card form{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-.contact-card label{
-text-align:left;
-font-weight:bold;
-}
-
-.contact-card input,
-.contact-card textarea{
-width:100%;
-padding:10px;
-border-radius:10px;
-border:1px solid #ccc;
-}
-
-/* focus */
-.contact-card input:focus,
-.contact-card textarea:focus{
-outline:2px solid #9fbc6e;
-}
-
-/* button */
-.contact-card button{
-background:#9fbc6e;
-color:white;
-border:none;
-padding:10px;
-border-radius:10px;
-cursor:pointer;
-}
-
-.contact-card button:hover{
-background:#88a85c;
-}
-
-/* error */
-.error{
-color:red;
-font-size:0.8rem;
-}
-
-/* success */
-.success{
-display:none;
-background:#9fbc6e;
-color:white;
-padding:15px;
-border-radius:15px;
-margin-top:10px;
-}
-
-/* FAQ */
-.faq-item{
-cursor:pointer;
-background:white;
-padding:10px;
-border-radius:10px;
-margin-top:10px;
-}
-
-.faq-answer{
-display:none;
-margin-top:5px;
-}
-
-/* ========================= */
 /* 🌸 GALLERY */
 /* ========================= */
-
 .gallery-page .gallery-section{
 padding:60px 20px;
 }
@@ -226,9 +107,8 @@ grid-template-columns:repeat(3,1fr);
 }
 
 /* ========================= */
-/* 🎀 FRAMES (FIXED SIZE) */
+/* 🎀 FRAMES */
 /* ========================= */
-
 .gallery-page .gallery-item,
 .media-frame{
 background:#f6d3d8;
@@ -241,7 +121,6 @@ box-shadow:
 transition:0.3s;
 }
 
-/* dashed border */
 .gallery-page .gallery-item::before,
 .media-frame::before{
 content:"";
@@ -252,7 +131,6 @@ border:2px dashed #ffffff;
 pointer-events:none;
 }
 
-/* 🍓 detail */
 .gallery-page .gallery-item::after,
 .media-frame::after{
 content:"🍓";
@@ -262,7 +140,6 @@ right:-8px;
 font-size:18px;
 }
 
-/* keep original sizing */
 .gallery-page .gallery-item img,
 .media-frame video,
 .media-frame iframe{
@@ -271,7 +148,6 @@ border-radius:15px;
 display:block;
 }
 
-/* hover */
 .gallery-page .gallery-item:hover,
 .media-frame:hover{
 transform:translateY(-5px);
@@ -280,7 +156,6 @@ transform:translateY(-5px);
 /* ========================= */
 /* FOOTER */
 /* ========================= */
-
 footer{
 padding:20px;
 font-size:0.8rem;
