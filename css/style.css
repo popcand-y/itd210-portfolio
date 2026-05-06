@@ -90,7 +90,7 @@ background-size:30px 30px;
 padding:80px 20px;
 }
 
-/* FLOATING (KEEP THIS — YOUR BOUNCE) */
+/* FLOATING (bounce stays) */
 .floating{
 width:80px;
 margin-bottom:20px;
@@ -105,35 +105,26 @@ filter:drop-shadow(0 6px 10px rgba(0,0,0,0.2));
 }
 
 /* ========================= */
-/* 🎀 FRAME STYLE (GLOBAL — RESTORED) */
+/* PET DISPLAY */
 /* ========================= */
-
-.frame{
+.pet-display{
 background:#f6d3d8;
 padding:15px;
 border-radius:25px;
-position:relative;
 box-shadow:
 0 0 0 3px #ffffff,
 0 8px 20px rgba(0,0,0,0.12);
 display:inline-block;
+position:relative;
 }
 
-.frame::before{
+.pet-display::before{
 content:"";
 position:absolute;
 inset:8px;
 border-radius:20px;
 border:2px dashed #ffffff;
 pointer-events:none;
-}
-
-/* ========================= */
-/* PET DISPLAY */
-/* ========================= */
-
-.pet-display{
-@extend .frame;
 }
 
 .pet-display img{
@@ -143,9 +134,8 @@ margin:0 auto;
 }
 
 /* ========================= */
-/* ROOM CARDS */
+/* ROOM CARD */
 /* ========================= */
-
 .room-card{
 min-width:250px;
 background:#e7c7cd;
@@ -162,7 +152,6 @@ transform:translateY(-5px);
 /* ========================= */
 /* GALLERY */
 /* ========================= */
-
 .gallery-item{
 background:#f6d3d8;
 padding:15px;
@@ -189,9 +178,8 @@ right:-8px;
 }
 
 /* ========================= */
-/* ✨ LOAD + REVEAL (RESTORED) */
+/* ✨ LOAD + REVEAL */
 /* ========================= */
-
 @keyframes loadIn {
 from { opacity: 0; transform: translateY(20px); }
 to { opacity: 1; transform: translateY(0); }
@@ -214,9 +202,8 @@ transform:translateY(0);
 }
 
 /* ========================= */
-/* 🍓 CONTACT PAGE (SAFE ADD) */
+/* 🍓 CONTACT PAGE */
 /* ========================= */
-
 body.contact-page{
 text-align:center;
 }
@@ -227,7 +214,7 @@ margin:0 auto;
 padding:40px 20px;
 }
 
-/* MATCH YOUR ORIGINAL FRAMES */
+/* frame restored */
 .contact-page .contact-box{
 background:#f6d3d8;
 padding:20px;
@@ -236,15 +223,14 @@ margin:25px auto;
 position:relative;
 box-shadow:
 0 0 0 3px #ffffff,
-0 8px 20px rgba(0,0,0,0.12);
-
-animation:loadIn 0.6s ease;
+0 8px 18px rgba(0,0,0,0.12);
+transition:0.25s;
 }
 
 .contact-page .contact-box::before{
 content:"";
 position:absolute;
-inset:8px;
+inset:10px;
 border-radius:20px;
 border:2px dashed #ffffff;
 }
@@ -256,15 +242,14 @@ top:-10px;
 right:-10px;
 }
 
-/* hover bounce */
 .contact-page .contact-box:hover{
 transform:translateY(-5px);
 }
 
-/* FORM */
+/* form */
 .contact-page .contact-form{
-background:white;
-padding:15px;
+background:#fff8f9;
+padding:18px;
 border-radius:15px;
 max-width:420px;
 margin:0 auto;
@@ -285,6 +270,7 @@ border-radius:10px;
 border:1px solid #ccc;
 }
 
+/* focus glow */
 .contact-page input:focus,
 .contact-page textarea:focus{
 outline:none;
@@ -292,7 +278,7 @@ border:1px solid #9fbc6e;
 box-shadow:0 0 0 3px rgba(159,188,110,0.25);
 }
 
-/* BUTTON */
+/* button */
 .contact-page button{
 background:#9fbc6e;
 color:white;
@@ -332,7 +318,7 @@ transition:0.3s;
 max-height:120px;
 }
 
-/* SUCCESS */
+/* success */
 .contact-page .success{
 display:none;
 text-align:center;
