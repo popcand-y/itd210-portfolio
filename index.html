@@ -3,16 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Page title shown in browser tab -->
 <title>Tobidoki</title>
 
+<!-- External CSS file for all styling (layout, colors, animations) -->
 <link rel="stylesheet" href="css/style.css">
+
+<!-- External JavaScript file for interactivity (character switching, slider, API) -->
 <script defer src="js/script.js"></script>
 </head>
 
 <body>
 
+<!-- ========================= -->
+<!-- 💚 HEADER / NAVIGATION -->
+<!-- ========================= -->
+<!-- This header appears on every page for consistent navigation -->
 <header>
 <h1>Tobidoki</h1>
+
+<!-- Navigation links connect all pages together -->
 <nav>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -22,33 +33,57 @@
 </nav>
 </header>
 
-<!-- HERO -->
+<!-- ========================= -->
+<!-- 🌸 HERO SECTION -->
+<!-- ========================= -->
+<!-- Intro section to welcome users and set the theme -->
 <section class="hero">
+
+<!-- Floating image adds visual motion using CSS animation -->
 <img src="gallery/strawberry.png" class="floating" alt="Cute strawberry">
+
+<!-- Main message to introduce the site experience -->
 <h2>A tiny cozy world waiting to be explored</h2>
 <p>Choose a character and begin your gentle adventure.</p>
+
 </section>
 
-<!-- PET SECTION -->
+<!-- ========================= -->
+<!-- 🐾 PET INTERACTIVE SECTION -->
+<!-- ========================= -->
+<!-- This section allows users to switch characters -->
 <section class="pet-section">
 
 <div class="pet-panel">
 
+<!-- Button triggers JavaScript function to go to previous character -->
 <button class="arrow" onclick="prevCharacter()">◀</button>
 
+<!-- Character display box styled with CSS frame -->
 <div class="pet-display">
+
+<!-- Image changes dynamically using JavaScript -->
 <img id="characterImage" src="gallery/cat.png" alt="character">
+
+<!-- Character name also updates dynamically -->
 <p id="characterName">Star Kitty</p>
+
 </div>
 
+<!-- Button triggers JavaScript function to go to next character -->
 <button class="arrow" onclick="nextCharacter()">▶</button>
 
 </div>
 
+<!-- ========================= -->
+<!-- 📊 CHARACTER STATS -->
+<!-- ========================= -->
+<!-- Visual stat bars to make the character feel interactive/game-like -->
 <div class="stats">
 
 <div class="stat">
 <span>Mood</span>
+<!-- Inner div width is controlled by JavaScript -->
 <div class="bar"><div id="moodBar"></div></div>
 </div>
 
@@ -66,19 +101,26 @@
 
 </section>
 
+<!-- Decorative divider for visual separation -->
 <hr class="divider">
 
-<!-- 🌸 ROOM SLIDER -->
+<!-- ========================= -->
+<!-- 🏠 ROOM SLIDER -->
+<!-- ========================= -->
+<!-- Horizontal slider users can interact with -->
 <section class="room-slider">
 
 <h2 class="slider-title">Explore Rooms ✧</h2>
 
 <div class="slider-container">
 
+<!-- Left button moves slider using JavaScript -->
 <button class="slider-btn left" onclick="slideLeft()">◀</button>
 
+<!-- Track holds all room cards -->
 <div class="slider-track" id="sliderTrack">
 
+<!-- Each card represents a different themed room -->
 <div class="room-card">
 <img src="gallery/matcha.png" alt="Matcha Cafe">
 <p>Matcha Café</p>
@@ -96,24 +138,39 @@
 
 </div>
 
+<!-- Right button moves slider -->
 <button class="slider-btn right" onclick="slideRight()">▶</button>
 
 </div>
 
 </section>
 
-<!-- ✨ Dynamic API Section -->
+<!-- ========================= -->
+<!-- ✨ API / DYNAMIC CONTENT -->
+<!-- ========================= -->
+<!-- This section loads a quote dynamically using JavaScript -->
 <section id="dynamic">
-  <h2>✨ Daily Inspiration</h2>
 
-  <button id="loadBtn">Get Quote</button>
+<h2>✨ Daily Inspiration</h2>
 
-  <p id="loadingMessage" style="display:none;">Loading...</p>
-  <p id="errorMessage"></p>
+<!-- Button triggers API call -->
+<button id="loadBtn">Get Quote</button>
 
-  <div id="dataContainer"></div>
+<!-- Loading message shown while fetching data -->
+<p id="loadingMessage" style="display:none;">Loading...</p>
+
+<!-- Error message shown if something goes wrong -->
+<p id="errorMessage"></p>
+
+<!-- Container where API data (quote) will appear -->
+<div id="dataContainer"></div>
+
 </section>
 
+<!-- ========================= -->
+<!-- 📝 FOOTER -->
+<!-- ========================= -->
+<!-- Simple footer with copyright -->
 <footer>
 © 2026 Allison Consuegra • ITD 210
 </footer>
