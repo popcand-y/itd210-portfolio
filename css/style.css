@@ -448,51 +448,106 @@ transform:none;
 }
 
 /* ========================= */
-/* 💌 CONTACT PAGE (SAFE ADD) */
+/* ✨ CONTACT VISUAL PLAYGROUND */
 /* ========================= */
 
-body.contact-page{
-background:#d3b1b3;
-color:#4b3f3f;
-text-align:center;
+/* soft entrance */
+.contact-box{
+  animation:fadeUp 0.6s ease both;
 }
 
-.contact-page main{
-padding:60px 20px;
+.contact-box:nth-child(2){ animation-delay:0.1s; }
+.contact-box:nth-child(3){ animation-delay:0.2s; }
+.contact-box:nth-child(4){ animation-delay:0.3s; }
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
-.contact-form{
-margin-top:20px;
+/* hover lift */
+.contact-box:hover{
+  transform:translateY(-5px);
+  transition:0.25s;
 }
 
-.contact-form input,
-.contact-form textarea{
-width:250px;
-padding:6px;
-margin:6px;
-border-radius:8px;
-border:1px solid #ccc;
+/* ========================= */
+/* 💖 FORM INTERACTIONS */
+/* ========================= */
+
+/* input focus glow */
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border:1px solid #9fbc6e;
+  box-shadow:0 0 0 3px rgba(159,188,110,0.25);
+  transform:scale(1.02);
+  transition:0.2s;
 }
 
-.contact-form button{
-background:#9fbc6e;
-color:white;
-border:none;
-padding:8px 12px;
-border-radius:10px;
-cursor:pointer;
+/* button press effect */
+.contact-form button:active{
+  transform:scale(0.96);
 }
 
+/* button glow hover */
 .contact-form button:hover{
-background:#88a85c;
+  box-shadow:0 5px 15px rgba(159,188,110,0.4);
 }
 
-.error{
-color:red;
-font-size:0.8rem;
+/* ========================= */
+/* ✨ FAQ INTERACTION */
+/* ========================= */
+
+.faq-item{
+  position:relative;
 }
+
+/* little arrow */
+.faq-item::after{
+  content:"▾";
+  position:absolute;
+  right:12px;
+  transition:0.3s;
+}
+
+/* rotate when open */
+.faq-item.active::after{
+  transform:rotate(180deg);
+}
+
+/* smooth reveal */
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.3s ease;
+}
+
+.faq-answer.show{
+  max-height:100px;
+}
+
+/* ========================= */
+/* ✨ SUCCESS POP */
+/* ========================= */
 
 .success{
-display:none;
-margin-top:10px;
+  animation:popIn 0.4s ease;
+}
+
+@keyframes popIn{
+  from{
+    transform:scale(0.8);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
 }
