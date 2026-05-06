@@ -1,37 +1,37 @@
 // ================= CHARACTER CAROUSEL =================
 const characters = [
-{ name: "Star Kitty", image: "gallery/cat.png" },
-{ name: "Peach Monkey", image: "gallery/monkey.png" },
-{ name: "Honey Bear", image: "gallery/bear.png" }
+  { name: "Star Kitty", image: "gallery/cat.png" },
+  { name: "Peach Monkey", image: "gallery/monkey.png" },
+  { name: "Honey Bear", image: "gallery/bear.png" }
 ];
 
 let currentCharacter = 0;
 
 function updateCharacter(){
-const img = document.getElementById("characterImage");
-const name = document.getElementById("characterName");
+  const img = document.getElementById("characterImage");
+  const name = document.getElementById("characterName");
 
-// Prevent errors on pages without this feature
-if(!img || !name) return;
+  // Prevent errors on pages without this feature
+  if(!img || !name) return;
 
-img.src = characters[currentCharacter].image;
-name.textContent = characters[currentCharacter].name;
+  img.src = characters[currentCharacter].image;
+  name.textContent = characters[currentCharacter].name;
 }
 
 function nextCharacter(){
-currentCharacter++;
-if(currentCharacter >= characters.length){
-currentCharacter = 0;
-}
-updateCharacter();
+  currentCharacter++;
+  if(currentCharacter >= characters.length){
+    currentCharacter = 0;
+  }
+  updateCharacter();
 }
 
 function prevCharacter(){
-currentCharacter--;
-if(currentCharacter < 0){
-currentCharacter = characters.length - 1;
-}
-updateCharacter();
+  currentCharacter--;
+  if(currentCharacter < 0){
+    currentCharacter = characters.length - 1;
+  }
+  updateCharacter();
 }
 
 updateCharacter();
@@ -78,4 +78,22 @@ if (video && toggleBtn) {
 
   });
 
+}
+
+
+// ================= FAQ TOGGLE (CONTACT PAGE) =================
+function toggleFAQ(el){
+  const all = document.querySelectorAll(".faq-item");
+
+  // close others (optional smooth behavior)
+  all.forEach(item => {
+    if(item !== el){
+      item.classList.remove("active");
+      item.nextElementSibling.classList.remove("show");
+    }
+  });
+
+  // toggle clicked one
+  el.classList.toggle("active");
+  el.nextElementSibling.classList.toggle("show");
 }
