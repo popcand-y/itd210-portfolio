@@ -3,16 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Page title shown in browser tab -->
 <title>Gallery | Tobidoki</title>
 
+<!-- Main stylesheet for layout, colors, and animations -->
 <link rel="stylesheet" href="css/style.css">
+
+<!-- JavaScript handles scroll reveal + animations -->
 <script defer src="js/script.js"></script>
 </head>
 
+<!-- Body class allows page-specific styling -->
 <body class="gallery-page">
 
+<!-- ========================= -->
+<!-- 💚 HEADER / NAVIGATION -->
+<!-- ========================= -->
 <header>
 <h1>Tobidoki</h1>
+
+<!-- Navigation links connect all pages -->
 <nav>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -24,15 +35,31 @@
 
 <main>
 
+<!-- ========================= -->
+<!-- 🌸 GALLERY SECTION -->
+<!-- ========================= -->
+<!-- Displays a collection of images in a grid layout -->
 <section class="gallery-section">
 
+<!-- Title uses load-in animation for visual entry effect -->
 <h2 class="gallery-title load-in">My Memories ♡</h2>
 
+<!-- Grid container organizes items using CSS Grid -->
 <div class="gallery-grid">
 
-<!-- ORIGINAL IMAGES -->
+<!-- ========================= -->
+<!-- 🧸 ORIGINAL IMAGES -->
+<!-- ========================= -->
+
+<!-- Each figure represents one gallery item -->
+<!-- tabindex="0" allows keyboard users to focus the item for accessibility -->
 <figure class="gallery-item reveal" tabindex="0">
+
+  <!-- Image with descriptive alt text for accessibility -->
+  <!-- loading="lazy" improves performance by loading images only when needed -->
   <img src="gallery/plush-collection.jpg" alt="A collection of character plush toys displayed together" loading="lazy">
+
+  <!-- Caption gives context and adds personality -->
   <figcaption>Character Plush Collection ✧</figcaption>
 </figure>
 
@@ -51,7 +78,10 @@
   <figcaption>Cozy Character World ☁</figcaption>
 </figure>
 
-<!-- NEW IMAGES -->
+<!-- ========================= -->
+<!-- ✨ NEW IMAGES -->
+<!-- ========================= -->
+
 <figure class="gallery-item reveal" tabindex="0">
   <img src="gallery/album-overview.jpg" alt="Full album overview showing photobook, CD, stickers, and inclusions arranged together" loading="lazy">
   <figcaption>Album Overview Layout ☁</figcaption>
@@ -72,7 +102,11 @@
   <figcaption>Photobook Magic ☁</figcaption>
 </figure>
 
-<!-- UPDATED FINAL IMAGE (MATCHES YOUR FILE NAME) -->
+<!-- ========================= -->
+<!-- 💙 FINAL FEATURE IMAGE -->
+<!-- ========================= -->
+
+<!-- This final image highlights a styled collage -->
 <figure class="gallery-item reveal" tabindex="0">
   <img src="gallery/gallerykpop-collage.jpg" alt="K-pop collage featuring blue aesthetic visuals, album imagery, and stylized edits" loading="lazy">
   <figcaption>Blue K-pop Collage ✧</figcaption>
@@ -84,6 +118,9 @@
 
 </main>
 
+<!-- ========================= -->
+<!-- 📝 FOOTER -->
+<!-- ========================= -->
 <footer>
 <p>© 2026 Allison Consuegra • ITD 210</p>
 </footer>
