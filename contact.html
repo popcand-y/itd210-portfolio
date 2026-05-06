@@ -2,51 +2,65 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- Page title shown in browser tab -->
 <title>Contact - Tobidoki</title>
+
+<!-- Main stylesheet for layout and design -->
 <link rel="stylesheet" href="css/style.css">
 
 <script>
 /* ========================= */
 /* 💡 FORM VALIDATION */
 /* ========================= */
+/* This function prevents form submission and checks if inputs are valid.
+   This improves user experience by showing errors before submission. */
 function validateForm(e){
   e.preventDefault();
 
   let valid = true;
 
+  // Get input fields
   const name = document.getElementById("name");
   const email = document.getElementById("email");
   const message = document.getElementById("message");
 
+  // Clear previous error messages
   document.querySelectorAll(".error").forEach(el => el.textContent="");
 
+  // Validate name (must not be empty)
   if(name.value.trim() === ""){
     document.getElementById("nameError").textContent="Please enter your name";
     valid=false;
   }
 
+  // Validate email (basic check for @ symbol)
   if(!email.value.includes("@")){
     document.getElementById("emailError").textContent="Enter a valid email";
     valid=false;
   }
 
+  // Validate message (must be at least 10 characters)
   if(message.value.length < 10){
     document.getElementById("messageError").textContent="Message must be at least 10 characters";
     valid=false;
   }
 
+  // If all inputs are valid, show success message instead of submitting
   if(valid){
     document.getElementById("success").style.display="block";
   }
 }
 
 /* ========================= */
-/* ✨ FAQ TOGGLE (UPDATED) */
+/* ✨ FAQ TOGGLE */
 /* ========================= */
+/* This function allows only one FAQ item to open at a time.
+   It improves usability and keeps the layout clean. */
 function toggleFAQ(el){
   const all = document.querySelectorAll(".faq-item");
 
-  // close others
+  // Close other FAQ items
   all.forEach(item => {
     if(item !== el){
       item.classList.remove("active");
@@ -54,7 +68,7 @@ function toggleFAQ(el){
     }
   });
 
-  // toggle clicked one
+  // Toggle the clicked FAQ
   el.classList.toggle("active");
   el.nextElementSibling.classList.toggle("show");
 }
@@ -62,10 +76,16 @@ function toggleFAQ(el){
 
 </head>
 
+<!-- Body class applies contact-specific styles -->
 <body class="contact-page">
 
+<!-- ========================= -->
+<!-- 💚 HEADER / NAVIGATION -->
+<!-- ========================= -->
 <header>
   <h1>Tobidoki</h1>
+
+  <!-- Navigation connects all pages of the site -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -77,50 +97,70 @@ function toggleFAQ(el){
 
 <main>
 
-  <!-- INTRO -->
+  <!-- ========================= -->
+  <!-- ✨ INTRO SECTION -->
+  <!-- ========================= -->
+  <!-- Welcomes the user and explains purpose of the page -->
   <div class="contact-box">
     <h2>Contact Me ♡</h2>
     <hr class="contact-divider">
+
     <p style="text-align:center;">
       Got a question or idea? Send me a message ✨
     </p>
   </div>
 
-  <!-- FORM -->
+  <!-- ========================= -->
+  <!-- 💌 CONTACT FORM -->
+  <!-- ========================= -->
+  <!-- Form collects user input and uses JavaScript validation -->
   <div class="contact-box">
     <h3>Send a Message</h3>
     <hr class="contact-divider">
 
     <div class="contact-form">
+
+      <!-- onsubmit triggers validation instead of default submit -->
       <form onsubmit="validateForm(event)">
 
+        <!-- Name input -->
         <label>Name</label>
         <input id="name" type="text">
+        <!-- Error message appears here if invalid -->
         <div class="error" id="nameError"></div>
 
+        <!-- Email input -->
         <label>Email</label>
         <input id="email" type="email">
         <div class="error" id="emailError"></div>
 
+        <!-- Message input -->
         <label>Message</label>
         <textarea id="message"></textarea>
         <div class="error" id="messageError"></div>
 
+        <!-- Submit button -->
         <button type="submit">Send</button>
 
       </form>
 
+      <!-- Success message shown when validation passes -->
       <div id="success" class="success">
         ✨ Message sent!
       </div>
+
     </div>
   </div>
 
-  <!-- FAQ -->
+  <!-- ========================= -->
+  <!-- ❓ FAQ SECTION -->
+  <!-- ========================= -->
+  <!-- Interactive accordion for common questions -->
   <div class="contact-box">
     <h3>FAQ ☁️</h3>
     <hr class="contact-divider">
 
+    <!-- Clicking question toggles answer visibility -->
     <div class="faq-item" onclick="toggleFAQ(this)">
       When will I get a reply?
     </div>
@@ -139,6 +179,9 @@ function toggleFAQ(el){
 
 </main>
 
+<!-- ========================= -->
+<!-- 📝 FOOTER -->
+<!-- ========================= -->
 <footer>
   <p>© 2026 Allison Consuegra • ITD 210</p>
 </footer>
