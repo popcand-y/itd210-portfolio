@@ -6,58 +6,68 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style>
-/* ONLY CONTACT PAGE STYLING */
-body.contact-page::before{ display:none; }
+/* ========================= */
+/* 💌 CONTACT PAGE (MATCHED) */
+/* ========================= */
 
+/* remove dots if you want cleaner look */
+body.contact-page::before{
+  display:none;
+}
+
+/* same spacing feel as other pages */
 .contact-page main{
-  max-width:700px;
-  margin:0 auto;
-  padding:40px 20px;
+  padding:60px 20px;
 }
 
-/* boxes */
+/* MATCH ABOUT PAGE BOX */
 .contact-box{
-  background:#f6d3d8;
-  padding:20px;
+  background:#e7c7cd;
+  padding:30px;
   border-radius:20px;
-  margin:20px auto;
-  max-width:600px;
-  position:relative;
-  box-shadow:
-    0 0 0 3px #ffffff,
-    0 8px 18px rgba(0,0,0,0.12);
+  max-width:650px;
+  margin:25px auto;
+  box-shadow:0 8px 18px rgba(0,0,0,0.15);
+  text-align:left;
 }
 
-.contact-box::before{
-  content:"";
-  position:absolute;
-  inset:10px;
-  border-radius:15px;
-  border:2px dashed #ffffff;
+/* headings */
+.contact-box h2,
+.contact-box h3{
+  text-align:center;
+  margin-bottom:10px;
 }
 
-/* form */
-.contact-card{
-  background:white;
-  padding:15px;
-  border-radius:15px;
+/* divider */
+.contact-box hr{
+  border:none;
+  height:2px;
+  background:#c97f8f;
+  width:60%;
+  margin:10px auto 20px;
 }
 
-form{
+/* form layout */
+.contact-card form{
   display:flex;
   flex-direction:column;
   gap:12px;
 }
 
-input, textarea{
-  width:100%;
+.contact-card label{
+  font-weight:bold;
+}
+
+.contact-card input,
+.contact-card textarea{
   padding:10px;
   border-radius:10px;
   border:1px solid #ccc;
+  font-size:14px;
 }
 
-/* button */
-button{
+/* button (same green) */
+.contact-card button{
   background:#9fbc6e;
   color:white;
   border:none;
@@ -66,7 +76,7 @@ button{
   cursor:pointer;
 }
 
-button:hover{
+.contact-card button:hover{
   background:#88a85c;
 }
 
@@ -79,19 +89,14 @@ button:hover{
 .success{
   display:none;
   margin-top:10px;
-  background:#9fbc6e;
-  color:white;
-  padding:10px;
-  border-radius:10px;
+  text-align:center;
 }
 
 /* FAQ */
 .faq-item{
-  background:white;
-  padding:10px;
-  border-radius:10px;
-  margin-top:10px;
   cursor:pointer;
+  font-weight:bold;
+  margin-top:10px;
 }
 
 .faq-answer{
@@ -102,7 +107,9 @@ button:hover{
 </style>
 
 <script>
-/* FORM VALIDATION */
+/* ========================= */
+/* 💡 FORM VALIDATION */
+/* ========================= */
 function validateForm(e){
   e.preventDefault();
 
@@ -134,7 +141,9 @@ function validateForm(e){
   }
 }
 
-/* FAQ TOGGLE */
+/* ========================= */
+/* ✨ FAQ TOGGLE */
+/* ========================= */
 function toggleFAQ(el){
   const answer = el.nextElementSibling;
   answer.style.display =
@@ -151,6 +160,7 @@ function toggleFAQ(el){
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
     <a href="media.html">Media</a>
     <a href="contact.html">Contact</a>
   </nav>
@@ -158,14 +168,20 @@ function toggleFAQ(el){
 
 <main>
 
-<!-- intro -->
+<!-- INTRO -->
 <div class="contact-box">
-  <h2>Contact Me 💌</h2>
-  <p>Got a question or idea? Send a message below!</p>
+  <h2>Contact Me ♡</h2>
+  <hr>
+  <p style="text-align:center;">
+    Got a question or idea? I’d love to hear from you ✨
+  </p>
 </div>
 
-<!-- form -->
+<!-- FORM -->
 <div class="contact-box">
+  <h3>Send a Message</h3>
+  <hr>
+
   <div class="contact-card">
 
     <form onsubmit="validateForm(event)">
@@ -196,6 +212,7 @@ function toggleFAQ(el){
 <!-- FAQ -->
 <div class="contact-box">
   <h3>FAQ ☁️</h3>
+  <hr>
 
   <div class="faq-item" onclick="toggleFAQ(this)">
     When will I get a reply?
@@ -205,10 +222,10 @@ function toggleFAQ(el){
   </div>
 
   <div class="faq-item" onclick="toggleFAQ(this)">
-    What is this site about?
+    What is this site?
   </div>
   <div class="faq-answer">
-    It’s my creative capstone project showcasing my work!
+    This is my Tobidoki capstone project ✨
   </div>
 
 </div>
