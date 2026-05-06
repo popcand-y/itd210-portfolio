@@ -116,7 +116,6 @@ position:absolute;
 inset:8px;
 border-radius:20px;
 border:2px dashed #ffffff;
-pointer-events:none;
 }
 
 .pet-display img{
@@ -174,11 +173,6 @@ border:1px solid #c97f8f;
 padding:50px 20px;
 }
 
-.slider-title{
-margin-bottom:20px;
-font-size:1.5rem;
-}
-
 .slider-container{
 display:flex;
 align-items:center;
@@ -191,7 +185,6 @@ display:flex;
 gap:20px;
 overflow:hidden;
 width:260px;
-scroll-behavior:smooth;
 }
 
 .room-card{
@@ -203,27 +196,8 @@ box-shadow:0 6px 15px rgba(0,0,0,0.15);
 transition:0.3s;
 }
 
-.room-card img{
-width:100%;
-border-radius:15px;
-}
-
-.room-card p{
-margin-top:10px;
-font-weight:bold;
-}
-
 .room-card:hover{
 transform:translateY(-5px);
-}
-
-.slider-btn{
-background:#9fbc6e;
-border:none;
-padding:10px 14px;
-border-radius:10px;
-cursor:pointer;
-font-size:16px;
 }
 
 /* FOOTER */
@@ -236,44 +210,6 @@ font-size:0.8rem;
 /* 🎀 ABOUT PAGE */
 /* ========================= */
 
-.about-page .about-banner{
-background:#c97f8f;
-padding:50px 20px;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-}
-
-.about-page .about-icon img{
-width:100px;
-background:white;
-padding:10px;
-border-radius:50%;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
-
-.about-page .about-text{
-text-align:left;
-max-width:400px;
-color:white;
-}
-
-.about-page .about-text h2{
-font-size:1.8rem;
-margin-bottom:5px;
-}
-
-.about-page .about-text p{
-font-size:0.95rem;
-opacity:0.9;
-}
-
-.about-page .about-content{
-padding:50px 20px;
-}
-
 .about-page .about-box{
 background:#e7c7cd;
 padding:30px;
@@ -285,21 +221,20 @@ text-align:left;
 }
 
 /* ========================= */
-/* 🍓 VIDEO FRAME */
+/* 🍓 SHARED FRAME STYLE */
 /* ========================= */
 
-.video-frame{
+.frame{
 background:#f6d3d8;
 padding:15px;
 border-radius:25px;
-display:inline-block;
 position:relative;
 box-shadow:
 0 0 0 3px #ffffff,
 0 8px 20px rgba(0,0,0,0.12);
 }
 
-.video-frame::before{
+.frame::before{
 content:"";
 position:absolute;
 inset:8px;
@@ -307,12 +242,11 @@ border-radius:20px;
 border:2px dashed #ffffff;
 }
 
-.video-frame::after{
+.frame::after{
 content:"🍓";
 position:absolute;
 top:-10px;
 right:-10px;
-font-size:22px;
 }
 
 /* ========================= */
@@ -320,57 +254,33 @@ font-size:22px;
 /* ========================= */
 
 .gallery-item{
-background:#f6d3d8;
-padding:15px;
-border-radius:25px;
-position:relative;
-box-shadow:
-0 0 0 3px #ffffff,
-0 8px 20px rgba(0,0,0,0.12);
-}
-
-.gallery-item::before{
-content:"";
-position:absolute;
-inset:8px;
-border-radius:20px;
-border:2px dashed #ffffff;
-}
-
-.gallery-item::after{
-content:"🍓";
-position:absolute;
-top:-8px;
-right:-8px;
-font-size:18px;
+@extend .frame;
 }
 
 /* ========================= */
-/* 🍓 CONTACT PAGE (FINAL) */
+/* 🍓 CONTACT PAGE */
 /* ========================= */
 
-/* fix alignment issue */
 .contact-page{
 text-align:left;
 }
 
-/* layout */
 .contact-page main{
 max-width:700px;
 margin:0 auto;
 padding:40px 20px;
 }
 
-/* CUTE FRAME */
+/* structured cute card */
 .contact-box{
 background:#f6d3d8;
-padding:18px;
-border-radius:25px;
-margin:30px auto;
+padding:25px;
+border-radius:18px;
+margin:25px auto;
 position:relative;
 box-shadow:
-0 0 0 3px #ffffff,
-0 10px 20px rgba(0,0,0,0.12);
+0 0 0 2px #ffffff,
+0 6px 16px rgba(0,0,0,0.12);
 max-width:600px;
 }
 
@@ -378,25 +288,31 @@ max-width:600px;
 .contact-box::before{
 content:"";
 position:absolute;
-inset:8px;
-border-radius:20px;
-border:2px dashed #ffffff;
+inset:10px;
+border-radius:14px;
+border:1.5px dashed #ffffffcc;
 }
 
-/* 🍓 corner */
+/* 🍓 */
 .contact-box::after{
 content:"🍓";
 position:absolute;
 top:-10px;
 right:-10px;
-font-size:20px;
 }
 
-/* FORM */
+/* headings */
+.contact-box h2,
+.contact-box h3{
+text-align:center;
+margin-bottom:10px;
+}
+
+/* form */
 .contact-form{
 background:#fff8f9;
 padding:18px;
-border-radius:18px;
+border-radius:12px;
 max-width:420px;
 margin:0 auto;
 }
@@ -410,18 +326,18 @@ gap:10px;
 .contact-form input,
 .contact-form textarea{
 padding:10px;
-border-radius:10px;
+border-radius:8px;
 border:1px solid #ccc;
 }
 
 /* FAQ */
 .faq-item{
-background:white;
-padding:12px;
-border-radius:12px;
+background:#ffffffcc;
+padding:10px;
+border-radius:10px;
 margin-top:10px;
-cursor:pointer;
 position:relative;
+cursor:pointer;
 }
 
 .faq-item::after{
@@ -438,4 +354,17 @@ transition:0.3s;
 
 .faq-answer.show{
 max-height:100px;
+}
+
+/* ========================= */
+/* ✨ ANIMATIONS */
+/* ========================= */
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.contact-box{
+animation:fadeUp 0.6s ease both;
 }
