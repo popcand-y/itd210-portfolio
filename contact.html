@@ -41,12 +41,22 @@ function validateForm(e){
 }
 
 /* ========================= */
-/* ✨ FAQ TOGGLE */
+/* ✨ FAQ TOGGLE (UPDATED) */
 /* ========================= */
 function toggleFAQ(el){
-  const answer = el.nextElementSibling;
-  answer.style.display =
-    answer.style.display === "block" ? "none" : "block";
+  const all = document.querySelectorAll(".faq-item");
+
+  // close others
+  all.forEach(item => {
+    if(item !== el){
+      item.classList.remove("active");
+      item.nextElementSibling.classList.remove("show");
+    }
+  });
+
+  // toggle clicked one
+  el.classList.toggle("active");
+  el.nextElementSibling.classList.toggle("show");
 }
 </script>
 
