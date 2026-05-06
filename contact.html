@@ -2,92 +2,129 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact</title>
-
+<title>Contact - Tobidoki</title>
 <link rel="stylesheet" href="css/style.css">
+
+<script>
+/* ========================= */
+/* 💡 FORM VALIDATION */
+/* ========================= */
+function validateForm(e){
+  e.preventDefault();
+
+  let valid = true;
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+
+  document.querySelectorAll(".error").forEach(el => el.textContent="");
+
+  if(name.value.trim() === ""){
+    document.getElementById("nameError").textContent="Please enter your name";
+    valid=false;
+  }
+
+  if(!email.value.includes("@")){
+    document.getElementById("emailError").textContent="Enter a valid email";
+    valid=false;
+  }
+
+  if(message.value.length < 10){
+    document.getElementById("messageError").textContent="Message must be at least 10 characters";
+    valid=false;
+  }
+
+  if(valid){
+    document.getElementById("success").style.display="block";
+  }
+}
+
+/* ========================= */
+/* ✨ FAQ TOGGLE */
+/* ========================= */
+function toggleFAQ(el){
+  const answer = el.nextElementSibling;
+  answer.style.display =
+    answer.style.display === "block" ? "none" : "block";
+}
+</script>
+
 </head>
 
 <body class="contact-page">
 
 <header>
-  <h1 class="logo">Tobidoki</h1>
-
+  <h1>Tobidoki</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
     <a href="media.html">Media</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<main class="contact-container">
+<main>
 
-  <!-- Intro -->
-  <h2>Contact Me 💌</h2>
-  <p>
-    Got a question, idea, or just want to say hi?  
-    Send me a message! I’d love to hear from you ✨
-  </p>
-
-  <p style="font-size:0.85rem;">
-    Please allow 1–2 days for a response.
-  </p>
-
-  <!-- FORM CARD -->
-  <form id="contactForm" novalidate>
-
-    <!-- Name -->
-    <label for="name">Name</label>
-    <input type="text" id="name" required>
-    <div class="error" id="nameError"></div>
-
-    <!-- Email -->
-    <label for="email">Email</label>
-    <input type="email" id="email" required>
-    <div class="error" id="emailError"></div>
-
-    <!-- Subject -->
-    <label for="subject">Subject</label>
-    <input type="text" id="subject" required>
-    <div class="error" id="subjectError"></div>
-
-    <!-- Message -->
-    <label for="message">Message</label>
-    <textarea id="message" required></textarea>
-    <div class="error" id="messageError"></div>
-
-    <!-- Character counter -->
-    <p id="counter">0 characters</p>
-
-    <button type="submit">Send</button>
-
-  </form>
-
-  <!-- Success message -->
-  <p id="successMessage"></p>
-
-  <!-- Socials -->
-  <div class="socials">
-    <h3>Find me online ✨</h3>
-
-    <a href="https://instagram.com" target="_blank">Instagram</a>
-    <a href="https://twitter.com" target="_blank">Twitter</a>
-    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+  <!-- INTRO -->
+  <div class="contact-box">
+    <h2>Contact Me ♡</h2>
+    <hr class="contact-divider">
+    <p style="text-align:center;">
+      Got a question or idea? Send me a message ✨
+    </p>
   </div>
 
-  <p style="font-size:0.8rem;">
-    *Social links are placeholders for demonstration purposes.
-  </p>
+  <!-- FORM -->
+  <div class="contact-box">
+    <h3>Send a Message</h3>
+    <hr class="contact-divider">
+
+    <div class="contact-form">
+      <form onsubmit="validateForm(event)">
+
+        <label>Name</label>
+        <input id="name" type="text">
+        <div class="error" id="nameError"></div>
+
+        <label>Email</label>
+        <input id="email" type="email">
+        <div class="error" id="emailError"></div>
+
+        <label>Message</label>
+        <textarea id="message"></textarea>
+        <div class="error" id="messageError"></div>
+
+        <button type="submit">Send</button>
+
+      </form>
+
+      <div id="success" class="success">
+        ✨ Message sent!
+      </div>
+    </div>
+  </div>
 
   <!-- FAQ -->
-  <div class="faq">
-    <h3>FAQ 💭</h3>
+  <div class="contact-box">
+    <h3>FAQ ☁️</h3>
+    <hr class="contact-divider">
 
-    <button onclick="toggleFAQ()">When will I get a reply?</button>
-    <p id="faqAnswer" style="display:none;">
-      I usually respond within 1–2 days!
-    </p>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      When will I get a reply?
+    </div>
+    <div class="faq-answer">
+      Usually within 1–2 days!
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      What is this site?
+    </div>
+    <div class="faq-answer">
+      This is my Tobidoki capstone project ✨
+    </div>
+
   </div>
 
 </main>
@@ -95,62 +132,6 @@
 <footer>
   <p>© 2026 Allison Consuegra • ITD 210</p>
 </footer>
-
-<script>
-// Character counter
-const messageField = document.getElementById("message");
-const counter = document.getElementById("counter");
-
-messageField.addEventListener("input", () => {
-  counter.textContent = messageField.value.length + " characters";
-});
-
-// FAQ toggle
-function toggleFAQ() {
-  const answer = document.getElementById("faqAnswer");
-  answer.style.display =
-    answer.style.display === "none" ? "block" : "none";
-}
-
-// Validation
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  let valid = true;
-  document.querySelectorAll(".error").forEach(el => el.textContent = "");
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const subject = document.getElementById("subject").value.trim();
-  const message = messageField.value.trim();
-
-  if (!name) {
-    document.getElementById("nameError").textContent = "Name is required";
-    valid = false;
-  }
-
-  if (!email.includes("@")) {
-    document.getElementById("emailError").textContent = "Enter a valid email";
-    valid = false;
-  }
-
-  if (!subject) {
-    document.getElementById("subjectError").textContent = "Subject is required";
-    valid = false;
-  }
-
-  if (message.length < 10) {
-    document.getElementById("messageError").textContent =
-      "Message must be at least 10 characters";
-    valid = false;
-  }
-
-  if (valid) {
-    document.getElementById("successMessage").textContent =
-      "Thanks! Your message was sent ✨";
-  }
-});
-</script>
 
 </body>
 </html>
