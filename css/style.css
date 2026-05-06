@@ -1,3 +1,9 @@
+/* =========================================
+   ITD 210 – Capstone Website Project
+   Student: Allison Consuegra
+   Project: Tobidoki Portfolio Website
+========================================= */
+
 /* RESET */
 *{
 margin:0;
@@ -260,16 +266,6 @@ max-width:400px;
 color:white;
 }
 
-.about-page .about-text h2{
-font-size:1.8rem;
-margin-bottom:5px;
-}
-
-.about-page .about-text p{
-font-size:0.95rem;
-opacity:0.9;
-}
-
 .about-page .about-content{
 padding:50px 20px;
 }
@@ -284,128 +280,8 @@ box-shadow:0 8px 18px rgba(0,0,0,0.15);
 text-align:left;
 }
 
-.about-page .about-box h2{
-text-align:center;
-margin-bottom:10px;
-font-size:1.5rem;
-}
-
-.about-page .cute-divider{
-border:none;
-height:2px;
-background:#c97f8f;
-width:60%;
-margin:10px auto 20px;
-}
-
-.about-page .about-box p{
-margin-bottom:12px;
-line-height:1.6;
-}
-
 /* ========================= */
-/* 🍓 VIDEO FRAME */
-/* ========================= */
-
-.video-frame{
-background:#f6d3d8;
-padding:15px;
-border-radius:25px;
-display:inline-block;
-position:relative;
-box-shadow:
-0 0 0 3px #ffffff,
-0 8px 20px rgba(0,0,0,0.12);
-}
-
-.video-frame::before{
-content:"";
-position:absolute;
-inset:8px;
-border-radius:20px;
-border:2px dashed #ffffff;
-pointer-events:none;
-}
-
-.video-frame::after{
-content:"🍓";
-position:absolute;
-top:-10px;
-right:-10px;
-font-size:22px;
-}
-
-.video-frame iframe{
-border-radius:15px;
-display:block;
-}
-
-/* ========================= */
-/* 🌸 GALLERY */
-/* ========================= */
-
-.gallery-section{
-padding:60px 20px;
-}
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(3, 1fr);
-gap:30px;
-max-width:700px;
-margin:0 auto;
-}
-
-.gallery-item{
-background:#f6d3d8;
-padding:15px;
-border-radius:25px;
-position:relative;
-box-shadow:
-0 0 0 3px #ffffff,
-0 8px 20px rgba(0,0,0,0.12);
-}
-
-.gallery-item::before{
-content:"";
-position:absolute;
-inset:8px;
-border-radius:20px;
-border:2px dashed #ffffff;
-pointer-events:none;
-}
-
-.gallery-item::after{
-content:"🍓";
-position:absolute;
-top:-8px;
-right:-8px;
-font-size:18px;
-}
-
-.gallery-item img{
-width:100%;
-max-width:120px;
-margin:0 auto;
-display:block;
-border-radius:15px;
-}
-
-.gallery-item p{
-margin-top:10px;
-font-size:0.85rem;
-background:#ffffffaa;
-display:inline-block;
-padding:4px 10px;
-border-radius:10px;
-}
-
-.gallery-item:hover{
-transform:translateY(-5px) scale(1.05);
-}
-
-/* ========================= */
-/* 🍓 CONTACT PAGE */
+/* 🌸 CONTACT PAGE */
 /* ========================= */
 
 body.contact-page{
@@ -418,10 +294,11 @@ margin:0 auto;
 padding:40px 20px;
 }
 
+/* cute framed boxes */
 .contact-page .contact-box{
 background:#f6d3d8;
 padding:20px;
-border-radius:20px;
+border-radius:25px;
 margin:25px auto;
 position:relative;
 box-shadow:
@@ -430,14 +307,16 @@ box-shadow:
 transition:0.25s;
 }
 
+/* dashed inner frame */
 .contact-page .contact-box::before{
 content:"";
 position:absolute;
 inset:10px;
-border-radius:15px;
+border-radius:18px;
 border:2px dashed #ffffff;
 }
 
+/* cute corner */
 .contact-page .contact-box::after{
 content:"🍓";
 position:absolute;
@@ -446,10 +325,12 @@ right:-10px;
 font-size:18px;
 }
 
+/* hover */
 .contact-page .contact-box:hover{
 transform:translateY(-4px);
 }
 
+/* FORM */
 .contact-page .contact-form{
 background:#fff8f9;
 padding:18px;
@@ -471,8 +352,17 @@ width:100%;
 padding:10px;
 border-radius:8px;
 border:1px solid #ccc;
+font-size:14px;
 }
 
+.contact-page input:focus,
+.contact-page textarea:focus{
+outline:none;
+border:1px solid #9fbc6e;
+box-shadow:0 0 0 3px rgba(159,188,110,0.25);
+}
+
+/* button */
 .contact-page button{
 background:#9fbc6e;
 color:white;
@@ -480,8 +370,14 @@ border:none;
 padding:10px;
 border-radius:8px;
 cursor:pointer;
+font-weight:600;
 }
 
+.contact-page button:hover{
+box-shadow:0 5px 15px rgba(159,188,110,0.4);
+}
+
+/* FAQ */
 .contact-page .faq-item{
 background:white;
 padding:12px;
@@ -495,6 +391,11 @@ position:relative;
 content:"▾";
 position:absolute;
 right:12px;
+transition:0.3s;
+}
+
+.contact-page .faq-item.active::after{
+transform:rotate(180deg);
 }
 
 .contact-page .faq-answer{
@@ -504,11 +405,24 @@ transition:0.3s ease;
 }
 
 .contact-page .faq-answer.show{
-max-height:100px;
+max-height:120px;
 }
 
+/* success message */
 .contact-page .success{
 text-align:center;
 margin-top:10px;
 display:none;
+animation:popIn 0.4s ease;
+}
+
+@keyframes popIn{
+from{
+transform:scale(0.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
 }
